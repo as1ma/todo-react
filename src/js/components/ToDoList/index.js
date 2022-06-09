@@ -11,7 +11,7 @@ export default function ToDoList({ toDos }) {
             <input
               type="checkbox"
               id={id}
-              data-index="${index}"
+              data-index={index}
               checked={toDo.done}
             />
             <label htmlFor={id}>{toDo.name}</label>
