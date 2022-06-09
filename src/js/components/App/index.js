@@ -11,7 +11,7 @@ export default function App({ toDos }) {
   return (
     <>
       <Form numToDos={toDos.length} />
-      {toDos.length > 1 ? <ToDoList toDos={toDos} /> : prompt}
+      {toDos.length > 0 ? <ToDoList toDos={toDos} /> : prompt}
     </>
   );
 }
