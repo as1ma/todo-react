@@ -2,7 +2,6 @@
   "name": "todo-react",
   "version": "1.0.0",
   "description": "A simple to-do list app built with React.",
-  "main": "src/js/index.js",
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
