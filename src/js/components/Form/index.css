@@ -1,0 +1,9 @@
+form > p {
+  max-width: 50ch;
+}
+
+form label,
+form input {
+  display: block;
+  width: 100%;
+}
