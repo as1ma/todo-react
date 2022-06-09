@@ -1,23 +1,20 @@
+import ToDo from "../ToDo";
 import "./index.css";
 
-export default function ToDoList({ toDos }) {
-  return (
-    <ul role="list">
-      {toDos.map((toDo, index) => {
-        const id = `todo-${index}`;
+export default function ToDoList({ toDos, toggleToDo }) {
+  function handleChange(event) {
+    let { index } = event.target.dataset;
+    if (!index) return;
 
-        return (
-          <li key={index}>
-            <input
-              type="checkbox"
-              id={id}
-              data-index={index}
-              checked={toDo.done}
-            />
-            <label htmlFor={id}>{toDo.name}</label>
-          </li>
-        );
-      })}
+    index = Number(index);
+    toggleToDo(index);
+  }
+
+  return (
+    <ul role="list" onChange={handleChange}>
+      {toDos.map((toDo, index) => (
+        <ToDo toDo={toDo} index={index} key={index} />
+      ))}
     </ul>
   );
 }

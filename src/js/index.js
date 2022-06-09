@@ -1,13 +1,9 @@
 import { createRoot } from "react-dom/client";
+import { getStorage } from "./storage";
 import App from "./components/App";
 
 const container = document.getElementById("app");
 const root = createRoot(container);
 
-const toDos = [
-  // { name: "Learn React", done: true },
-  // { name: "Learn Vue", done: false },
-  // { name: "Learn Svelte", done: false },
-];
-
+const toDos = getStorage();
 root.render(<App toDos={toDos} />);
