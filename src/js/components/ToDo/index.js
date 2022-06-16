@@ -1,4 +1,4 @@
-export default function ToDo({ toDo, index, toggleToDo }) {
+function ToDo({ name, done, index, toggleToDo }) {
   const id = `todo-${index}`;
 
   function handleChange(event) {
@@ -15,10 +15,12 @@ export default function ToDo({ toDo, index, toggleToDo }) {
         type="checkbox"
         id={id}
         data-index={index}
-        checked={toDo.done}
+        checked={done}
         onChange={handleChange}
       />
-      <label htmlFor={id}>{toDo.name}</label>
+      <label htmlFor={id}>{name}</label>
     </li>
   );
 }
+
+export default ToDo;

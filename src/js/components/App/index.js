@@ -3,7 +3,7 @@ import { setStorage } from "../../storage";
 import Form from "../Form";
 import ToDoList from "../ToDoList";
 
-export default function App(props) {
+function App(props) {
   const [toDos, setToDos] = useState(props.toDos);
 
   const prompt = (
@@ -45,3 +45,5 @@ export default function App(props) {
     </>
   );
 }
+
+export default App;

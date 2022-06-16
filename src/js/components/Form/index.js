@@ -1,6 +1,6 @@
 import "./index.css";
 
-export default function Form({ numToDos = 0, addToDo, clearToDos }) {
+function Form({ numToDos = 0, addToDo, clearToDos }) {
   const inputId = "to-do";
 
   const clearButton = (
@@ -43,3 +43,5 @@ export default function Form({ numToDos = 0, addToDo, clearToDos }) {
     </form>
   );
 }
+
+export default Form;
