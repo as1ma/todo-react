@@ -1,13 +1,7 @@
 import "./index.css";
 
-function Form({ numToDos = 0, addToDo, clearToDos }) {
+function Form({ addToDo }) {
   const inputId = "to-do";
-
-  const clearButton = (
-    <button type="button" onClick={handleClick}>
-      Clear list
-    </button>
-  );
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -21,15 +15,6 @@ function Form({ numToDos = 0, addToDo, clearToDos }) {
     input.value = "";
   }
 
-  function handleClick() {
-    const message = "Are you sure you want to clear your to-do list?";
-
-    const confirmClear = window.confirm(message);
-    if (!confirmClear) return;
-
-    clearToDos();
-  }
-
   return (
     <form onSubmit={handleSubmit}>
       <p>
@@ -38,7 +23,6 @@ function Form({ numToDos = 0, addToDo, clearToDos }) {
       </p>
       <p>
         <button type="submit">Add to-do</button>
-        {numToDos > 0 && clearButton}
       </p>
     </form>
   );

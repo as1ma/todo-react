@@ -26,8 +26,9 @@ function App(props) {
     setToDos(updatedToDos);
   }
 
-  function clearToDos() {
-    setToDos([]);
+  function deleteToDo(index) {
+    const updatedToDos = toDos.filter((toDo, i) => i !== index);
+    setToDos(updatedToDos);
   }
 
   useEffect(() => {
@@ -36,9 +37,13 @@ function App(props) {
 
   return (
     <>
-      <Form numToDos={toDos.length} addToDo={addToDo} clearToDos={clearToDos} />
+      <Form addToDo={addToDo} />
       {toDos.length > 0 ? (
-        <ToDoList toDos={toDos} toggleToDo={toggleToDo} />
+        <ToDoList
+          toDos={toDos}
+          toggleToDo={toggleToDo}
+          deleteToDo={deleteToDo}
+        />
       ) : (
         prompt
       )}
