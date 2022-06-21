@@ -27,7 +27,7 @@ function ToDo({ name, done, index, toggleToDo, deleteToDo }) {
   return (
     <li data-name={name} data-index={index}>
       <input type="checkbox" id={id} checked={done} onChange={handleChange} />
-      <label htmlFor={id}>{name}</label> (
+      <label htmlFor={id}>{name}</label>
       <button
         data-action="delete"
         aria-label={`Delete '${name}'`}
@@ -35,7 +35,6 @@ function ToDo({ name, done, index, toggleToDo, deleteToDo }) {
       >
         Delete
       </button>
-      )
     </li>
   );
 }
