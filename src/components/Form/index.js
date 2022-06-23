@@ -7,6 +7,7 @@ function Form({ addToDo }) {
     event.preventDefault();
 
     const input = event.target.elements[inputId];
+    if (!input) return;
 
     const value = input.value.trim();
     if (!value) return;

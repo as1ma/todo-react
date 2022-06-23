@@ -1,37 +1,30 @@
 import "./index.css";
 
-function ToDo({ name, done, index, toggleToDo, deleteToDo }) {
+function ToDo({ name, done, index, ...props }) {
   const id = `todo-${index}`;
 
-  function handleChange(event) {
-    let { index } = event.target.closest("li").dataset;
-    if (!index) return;
-
-    index = Number(index);
-    toggleToDo(index);
+  function toggleToDo() {
+    props.toggleToDo(index);
   }
 
-  function handleClick(event) {
-    let { name, index } = event.target.closest("li").dataset;
-    if (!name || !index) return;
-
-    index = Number(index);
-
+  function deleteToDo() {
     const message = `Are you sure you want to delete '${name}'?`;
+
     const confirmDelete = window.confirm(message);
     if (!confirmDelete) return;
 
-    deleteToDo(index);
+    props.deleteToDo(index);
   }
 
   return (
-    <li data-name={name} data-index={index}>
-      <input type="checkbox" id={id} checked={done} onChange={handleChange} />
+    <li>
+      <input id={id} type="checkbox" checked={done} onChange={toggleToDo} />
       <label htmlFor={id}>{name}</label>
       <button
+        type="button"
         data-action="delete"
         aria-label={`Delete '${name}'`}
-        onClick={handleClick}
+        onClick={deleteToDo}
       >
         Delete
       </button>

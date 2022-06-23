@@ -38,14 +38,14 @@ function App(props) {
   return (
     <>
       <Form addToDo={addToDo} />
-      {toDos.length > 0 ? (
+      {toDos.length < 1 ? (
+        prompt
+      ) : (
         <ToDoList
           toDos={toDos}
           toggleToDo={toggleToDo}
           deleteToDo={deleteToDo}
         />
-      ) : (
-        prompt
       )}
     </>
   );
