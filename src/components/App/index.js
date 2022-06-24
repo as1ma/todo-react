@@ -6,12 +6,6 @@ import ToDoList from "../ToDoList";
 function App(props) {
   const [toDos, setToDos] = useState(props.toDos);
 
-  const prompt = (
-    <p>
-      <em>Add some to-dos...</em>
-    </p>
-  );
-
   function addToDo(value) {
     const toDo = { name: value, done: false };
     setToDos([...toDos, toDo]);
@@ -39,7 +33,9 @@ function App(props) {
     <>
       <Form addToDo={addToDo} />
       {toDos.length < 1 ? (
-        prompt
+        <p>
+          <em>Add some to-dos...</em>
+        </p>
       ) : (
         <ToDoList
           toDos={toDos}
