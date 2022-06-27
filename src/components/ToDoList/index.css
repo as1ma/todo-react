@@ -1,5 +1,6 @@
 li {
   display: flex;
+  align-items: center;
 }
 
 li + li {
