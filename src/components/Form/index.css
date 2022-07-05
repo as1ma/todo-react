@@ -1,9 +1,0 @@
-form label,
-form input {
-  display: block;
-  width: 100%;
-}
-
-form button + button {
-  margin-left: 0.25em;
-}

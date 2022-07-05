@@ -1,4 +1,4 @@
-import "./index.css";
+import "../styles/Form.css";
 
 function Form({ addToDo }) {
   const inputId = "to-do";
@@ -17,7 +17,7 @@ function Form({ addToDo }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <p>
         <label htmlFor={inputId}>What do you need to do?</label>
         <input id={inputId} type="text" required />

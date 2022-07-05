@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { setStorage } from "../../storage";
-import Form from "../Form";
-import ToDoList from "../ToDoList";
+import { setStorage } from "../storage";
+import Form from "./Form";
+import ToDoList from "./ToDoList";
 
 function App(props) {
   const [toDos, setToDos] = useState(props.toDos);

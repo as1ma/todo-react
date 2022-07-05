@@ -1,7 +1,7 @@
-import "./index.css";
+import "../styles/ToDo.css";
 
 function ToDo({ name, done, index, ...props }) {
-  const id = `todo-${index}`;
+  const id = `toDo-${index}`;
 
   function toggleToDo() {
     props.toggleToDo(index);
@@ -17,7 +17,7 @@ function ToDo({ name, done, index, ...props }) {
   }
 
   return (
-    <li>
+    <li className="toDo">
       <input id={id} type="checkbox" checked={done} onChange={toggleToDo} />
       <label htmlFor={id}>{name}</label>
       <button
