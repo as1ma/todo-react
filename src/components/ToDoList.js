@@ -1,9 +1,8 @@
 import ToDo from "./ToDo";
-import "../styles/ToDoList.css";
 
 function ToDoList({ toDos, toggleToDo, deleteToDo }) {
   return (
-    <ul className="toDoList" role="list">
+    <ul role="list">
       {toDos.map((toDo, index) => (
         <ToDo
           {...toDo}

@@ -1,8 +1,0 @@
-.toDoList li {
-  display: flex;
-  align-items: center;
-}
-
-.toDoList li + li {
-  margin-top: 1rem;
-}
