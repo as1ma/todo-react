@@ -3,11 +3,10 @@ import ToDo from "./ToDo";
 function ToDoList({ toDos, toggleToDo, deleteToDo }) {
   return (
     <ul role="list">
-      {toDos.map((toDo, index) => (
+      {toDos.map((toDo) => (
         <ToDo
           {...toDo}
-          index={index}
-          key={index}
+          key={toDo.id}
           toggleToDo={toggleToDo}
           deleteToDo={deleteToDo}
         />

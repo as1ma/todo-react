@@ -1,24 +1,23 @@
 import "../styles/ToDo.css";
 
-function ToDo({ name, done, index, ...props }) {
-  const id = `toDo-${index}`;
-
-  function toggleToDo() {
-    props.toggleToDo(index);
-  }
-
+function ToDo({ id, name, done, ...props }) {
   function deleteToDo() {
     const message = `Are you sure you want to delete '${name}'?`;
 
     const confirmDelete = window.confirm(message);
     if (!confirmDelete) return;
 
-    props.deleteToDo(index);
+    props.deleteToDo(id);
   }
 
   return (
     <li className="toDo">
-      <input id={id} type="checkbox" checked={done} onChange={toggleToDo} />
+      <input
+        id={id}
+        type="checkbox"
+        checked={done}
+        onChange={() => void props.toggleToDo(id)}
+      />
       <label htmlFor={id}>{name}</label>
       <button
         type="button"

@@ -7,21 +7,26 @@ function App(props) {
   const [toDos, setToDos] = useState(props.toDos);
 
   function addToDo(value) {
-    const toDo = { name: value, done: false };
-    setToDos([...toDos, toDo]);
+    const newToDo = {
+      id: window.crypto.randomUUID(),
+      name: value,
+      done: false,
+    };
+
+    setToDos([...toDos, newToDo]);
   }
 
-  function toggleToDo(index) {
-    const updatedToDos = toDos.map((toDo, i) => {
-      if (i !== index) return toDo;
+  function toggleToDo(id) {
+    const updatedToDos = toDos.map((toDo) => {
+      if (toDo.id !== id) return toDo;
       return { ...toDo, done: !toDo.done };
     });
 
     setToDos(updatedToDos);
   }
 
-  function deleteToDo(index) {
-    const updatedToDos = toDos.filter((toDo, i) => i !== index);
+  function deleteToDo(id) {
+    const updatedToDos = toDos.filter((toDo) => toDo.id !== id);
     setToDos(updatedToDos);
   }
 
