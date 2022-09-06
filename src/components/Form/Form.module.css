@@ -2,8 +2,8 @@
   margin-bottom: 2rem;
 }
 
-.form label,
-.form input {
+.label,
+.input {
   display: block;
   width: 100%;
 }

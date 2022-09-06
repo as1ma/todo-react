@@ -1,4 +1,4 @@
-import ToDo from "./ToDo";
+import ToDo from "../ToDo/ToDo.js";
 
 function ToDoList({ toDos, toggleToDo, deleteToDo }) {
   return (

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/Form.css";
+import * as styles from "./Form.module.css";
 
 function Form({ addToDo }) {
   const inputId = "to-do";
@@ -16,11 +16,14 @@ function Form({ addToDo }) {
   }
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <p>
-        <label htmlFor={inputId}>What do you need to do?</label>
+        <label className={styles.label} htmlFor={inputId}>
+          What do you need to do?
+        </label>
         <input
           id={inputId}
+          className={styles.input}
           type="text"
           value={name}
           onInput={handleInput}

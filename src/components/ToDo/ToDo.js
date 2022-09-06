@@ -1,4 +1,4 @@
-import "../styles/ToDo.css";
+import * as styles from "./ToDo.module.css";
 
 function ToDo({ id, name, done, ...props }) {
   function deleteToDo() {
@@ -11,15 +11,19 @@ function ToDo({ id, name, done, ...props }) {
   }
 
   return (
-    <li className="toDo">
+    <li className={styles.li}>
       <input
         id={id}
+        className={styles.checkbox}
         type="checkbox"
         checked={done}
         onChange={() => void props.toggleToDo(id)}
       />
-      <label htmlFor={id}>{name}</label>
+      <label className={styles.label} htmlFor={id}>
+        {name}
+      </label>
       <button
+        className={styles.button}
         type="button"
         data-action="delete"
         aria-label={`Delete '${name}'`}
