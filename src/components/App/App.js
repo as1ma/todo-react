@@ -39,9 +39,7 @@ function App(props) {
     <>
       <ToDoForm addToDo={addToDo} />
       {toDos.length < 1 ? (
-        <p>
-          <em>Add some to-dos...</em>
-        </p>
+        <p className="italic">Add some to-dos...</p>
       ) : (
         <ToDoList>
           {toDos.map((toDo) => (

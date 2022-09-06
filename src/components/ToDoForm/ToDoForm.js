@@ -3,16 +3,20 @@ import * as styles from "./ToDoForm.module.css";
 
 function ToDoForm({ addToDo }) {
   const inputId = "to-do";
-  const [name, setName] = useState("");
+  const [value, setValue] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (name.trim()) addToDo(name);
-    setName("");
+
+    const trimmedValue = value.trim();
+    if (!trimmedValue) return;
+
+    addToDo(trimmedValue);
+    setValue("");
   }
 
-  function handleInput(event) {
-    setName(event.target.value);
+  function handleChange(event) {
+    setValue(event.target.value);
   }
 
   return (
@@ -22,12 +26,12 @@ function ToDoForm({ addToDo }) {
           What do you need to do?
         </label>
         <input
+          required
           id={inputId}
           className={styles.input}
           type="text"
-          value={name}
-          onInput={handleInput}
-          required
+          value={value}
+          onChange={handleChange}
         />
       </p>
       <p>

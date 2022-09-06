@@ -1,6 +1,10 @@
 import * as styles from "./ToDo.module.css";
 
 function ToDo({ id, name, done, ...props }) {
+  function toggleToDo() {
+    props.toggleToDo(id);
+  }
+
   function deleteToDo() {
     const message = `Are you sure you want to delete '${name}'?`;
 
@@ -17,7 +21,7 @@ function ToDo({ id, name, done, ...props }) {
         className={styles.checkbox}
         type="checkbox"
         checked={done}
-        onChange={() => void props.toggleToDo(id)}
+        onChange={toggleToDo}
       />
       <label className={styles.label} htmlFor={id}>
         {name}
@@ -25,7 +29,6 @@ function ToDo({ id, name, done, ...props }) {
       <button
         className={styles.button}
         type="button"
-        data-action="delete"
         aria-label={`Delete '${name}'`}
         onClick={deleteToDo}
       >

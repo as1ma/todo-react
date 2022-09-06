@@ -2,12 +2,8 @@ const storageKey = "todo-react";
 
 function getStorage() {
   const data = localStorage.getItem(storageKey);
-
-  if (data) {
-    return JSON.parse(data);
-  }
-
-  return [];
+  if (!data) return [];
+  return JSON.parse(data);
 }
 
 function setStorage(data) {
