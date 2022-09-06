@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { setStorage } from "../../storage.js";
-import Form from "../Form/Form.js";
+import ToDoForm from "../ToDoForm/ToDoForm.js";
 import ToDoList from "../ToDoList/ToDoList.js";
+import ToDo from "../ToDo/ToDo.js";
 
 function App(props) {
   const [toDos, setToDos] = useState(props.toDos);
@@ -36,17 +37,22 @@ function App(props) {
 
   return (
     <>
-      <Form addToDo={addToDo} />
+      <ToDoForm addToDo={addToDo} />
       {toDos.length < 1 ? (
         <p>
           <em>Add some to-dos...</em>
         </p>
       ) : (
-        <ToDoList
-          toDos={toDos}
-          toggleToDo={toggleToDo}
-          deleteToDo={deleteToDo}
-        />
+        <ToDoList>
+          {toDos.map((toDo) => (
+            <ToDo
+              {...toDo}
+              key={toDo.id}
+              toggleToDo={toggleToDo}
+              deleteToDo={deleteToDo}
+            />
+          ))}
+        </ToDoList>
       )}
     </>
   );

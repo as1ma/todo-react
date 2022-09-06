@@ -1,7 +1,7 @@
 import { useState } from "react";
-import * as styles from "./Form.module.css";
+import * as styles from "./ToDoForm.module.css";
 
-function Form({ addToDo }) {
+function ToDoForm({ addToDo }) {
   const inputId = "to-do";
   const [name, setName] = useState("");
 
@@ -37,4 +37,4 @@ function Form({ addToDo }) {
   );
 }
 
-export default Form;
+export default ToDoForm;
