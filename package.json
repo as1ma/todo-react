@@ -6,6 +6,7 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
+    "lint": "eslint src/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,10 +21,14 @@
   },
   "homepage": "https://github.com/kieranbarker/todo-react#readme",
   "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-plugin-react": "^7.31.7",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "parcel": "^2.6.0",
     "process": "^0.11.10"
   },
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   }

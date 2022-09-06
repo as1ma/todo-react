@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { setStorage } from "../../storage.js";
+import PropTypes from "prop-types";
 import ToDoForm from "../ToDoForm/ToDoForm.js";
 import ToDoList from "../ToDoList/ToDoList.js";
 import ToDo from "../ToDo/ToDo.js";
+import { setStorage } from "../../storage.js";
 
 function App(props) {
   const [toDos, setToDos] = useState(props.toDos);
@@ -55,5 +56,15 @@ function App(props) {
     </>
   );
 }
+
+App.propTypes = {
+  toDos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      done: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
+};
 
 export default App;

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import * as styles from "./ToDoForm.module.css";
 
 function ToDoForm({ addToDo }) {
@@ -40,5 +41,9 @@ function ToDoForm({ addToDo }) {
     </form>
   );
 }
+
+ToDoForm.propTypes = {
+  addToDo: PropTypes.func.isRequired,
+};
 
 export default ToDoForm;

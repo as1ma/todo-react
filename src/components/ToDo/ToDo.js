@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import * as styles from "./ToDo.module.css";
 
 function ToDo({ id, name, done, ...props }) {
@@ -37,5 +38,13 @@ function ToDo({ id, name, done, ...props }) {
     </li>
   );
 }
+
+ToDo.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  done: PropTypes.bool.isRequired,
+  toggleToDo: PropTypes.func.isRequired,
+  deleteToDo: PropTypes.func.isRequired,
+};
 
 export default ToDo;
